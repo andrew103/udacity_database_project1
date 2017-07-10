@@ -1,5 +1,18 @@
-[('Candidate is jerk, alleges rival', 2, 338647), ('Bears love berries, alleges bear', 1, 253801), ('Bad things gone, say good people', 3, 170098), ("Goats eat Google's lawn", 1, 84906), ('Trouble for troubled troublemakers', 2, 84810), ('Balloon goons doomed', 4, 84557), ('There are a lot of bears', 1, 84504), ('Media obsessed with bears', 1, 84383)]
+Popular articles:
+[('Candidate is jerk, alleges rival', 2, 338647),
+('Bears love berries, alleges bear', 1, 253801),
+('Bad things gone, say good people', 3, 170098),
+("Goats eat Google's lawn", 1, 84906),
+('Trouble for troubled troublemakers', 2, 84810),
+('Balloon goons doomed', 4, 84557),
+('There are a lot of bears', 1, 84504),
+('Media obsessed with bears', 1, 84383)]
 
-[('Ursula La Multa', 507594), ('Rudolf von Treppenwitz', 423457), ('Anonymous Contributor', 170098), ('Markoff Chaney', 84557)]
+Popular authors:
+[('Ursula La Multa', 507594),
+('Rudolf von Treppenwitz', 423457),
+('Anonymous Contributor', 170098),
+('Markoff Chaney', 84557)]
 
+Percent error greater than 1:
 [(datetime.date(2016, 7, 17), '2.26268624680273%')]

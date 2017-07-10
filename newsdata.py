@@ -1,3 +1,5 @@
+# Code is written with Python version 3.x
+
 import psycopg2
 
 
@@ -45,14 +47,17 @@ select a.date, concat(cast((b.num * 100.0/(a.num + b.num))as float), '%')
 
 def execute_query(query):
     """ Dedicated function for running queries that are passed in """
-    db = psycopg2.connect("dbname=news")
-    c = db.cursor()
+    try:
+        db = psycopg2.connect("dbname=news")
+        c = db.cursor()
 
-    c.execute(query)
+        c.execute(query)
 
-    result = c.fetchall()
-    db.close()
-    return result
+        result = c.fetchall()
+        db.close()
+        return result
+    except:
+        return "Unable to connect to the database"
 
 
 def popular_article():
