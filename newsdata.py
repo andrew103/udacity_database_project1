@@ -1,15 +1,16 @@
-# Code is written with Python version 3.x
+#!/usr/bin/env python3
 
 import psycopg2
 
 
 # Variables that hold queries
 article_query = """
-select articles.title, articles.author, cast(count(articles.slug)as int) as num
+select articles.title, cast(count(articles.slug)as int) as num
     from articles, log
     where log.path like concat('%', articles.slug)
-    group by articles.title, articles.author
-    order by num desc;
+    group by articles.title
+    order by num desc
+    limit 3;
 """
 
 author_query = """
@@ -65,7 +66,11 @@ def popular_article():
     to least """
     # use slug to relate IP views to articles:
     # where log.path = '%'articles.slug
-    return execute_query(article_query)
+    top_articles = execute_query(article_query)
+    print("Top 3 Trending Articles")
+    print("-" * 15)
+    for article in top_articles:
+        print("{} -- {} views".format(article[0], article[1]))
 
 
 def popular_author():
@@ -73,7 +78,11 @@ def popular_author():
     to least """
     # use double select statement with inner being the select statement
     # from the popular_article function
-    return execute_query(author_query)
+    top_authors = execute_query(author_query)
+    print("Most Viewed Authors")
+    print("-" * 15)
+    for author in top_authors:
+        print("{} -- {} views".format(author[0], author[1]))
 
 
 def percent_error_requests():
@@ -81,13 +90,17 @@ def percent_error_requests():
     receiving error messages such as 404 NOT FOUND that exceed 1% """
     # find a way to pull status messages given the same day
     # then do math for avg
-    return execute_query(error_query)
+    error_percent = execute_query(error_query)
+    print("Days with 404 errors greater than 1%")
+    print("-" * 15)
+    for error in error_percent:
+        print("{} -- {}".format(error[0], error[1]))
 
 
 # Main function that runs all or some functions in the file
 if __name__ == "__main__":
-    print(popular_article())
+    popular_article()
     print('')
-    print(popular_author())
+    popular_author()
     print('')
-    print(percent_error_requests())
+    percent_error_requests()
