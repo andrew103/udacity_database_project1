@@ -1,18 +1,16 @@
-Popular articles:
-[('Candidate is jerk, alleges rival', 2, 338647),
-('Bears love berries, alleges bear', 1, 253801),
-('Bad things gone, say good people', 3, 170098),
-("Goats eat Google's lawn", 1, 84906),
-('Trouble for troubled troublemakers', 2, 84810),
-('Balloon goons doomed', 4, 84557),
-('There are a lot of bears', 1, 84504),
-('Media obsessed with bears', 1, 84383)]
+Top 3 Trending Articles
+---------------
+Candidate is jerk, alleges rival -- 338647 views
+Bears love berries, alleges bear -- 253801 views
+Bad things gone, say good people -- 170098 views
 
-Popular authors:
-[('Ursula La Multa', 507594),
-('Rudolf von Treppenwitz', 423457),
-('Anonymous Contributor', 170098),
-('Markoff Chaney', 84557)]
+Most Viewed Authors
+---------------
+Ursula La Multa -- 507594 views
+Rudolf von Treppenwitz -- 423457 views
+Anonymous Contributor -- 170098 views
+Markoff Chaney -- 84557 views
 
-Percent error greater than 1:
-[(datetime.date(2016, 7, 17), '2.26268624680273%')]
+Days with 404 errors greater than 1%
+---------------
+2016-07-17 -- 2.26268624680273%
